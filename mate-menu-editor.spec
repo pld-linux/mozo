@@ -1,12 +1,12 @@
 Summary:	Mozo - menu editor for MATE desktop
 Summary(pl.UTF-8):	Mozo - edytor menu dla środowiska MATE
 Name:		mate-menu-editor
-Version:	1.6.0
+Version:	1.6.1
 Release:	1
 License:	GPL v2
 Group:		X11/Applications
 Source0:	http://pub.mate-desktop.org/releases/1.6/%{name}-%{version}.tar.xz
-# Source0-md5:	587f86b14016ca9d759b90888535c2f3
+# Source0-md5:	657b9b84fc5c13b72d7767c743a0764c
 URL:		http://mate-desktop.org/
 BuildRequires:	autoconf >= 2.53
 BuildRequires:	automake >= 1:1.7
@@ -81,6 +81,7 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_bindir}/mozo
 %dir %{py_sitescriptdir}/Mozo
 %{py_sitescriptdir}/Mozo/*.py[co]
-%{_datadir}/mozo
+%{_datadir}/mate-menu-editor
 %{_desktopdir}/mozo.desktop
 %{_iconsdir}/hicolor/*x*/apps/mozo.png
+%{_mandir}/man1/mozo.1*
