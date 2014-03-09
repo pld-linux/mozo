@@ -1,12 +1,12 @@
 Summary:	Mozo - menu editor for MATE desktop
 Summary(pl.UTF-8):	Mozo - edytor menu dla środowiska MATE
-Name:		mate-menu-editor
-Version:	1.6.1
+Name:		mozo
+Version:	1.8.0
 Release:	1
 License:	GPL v2
 Group:		X11/Applications
-Source0:	http://pub.mate-desktop.org/releases/1.6/%{name}-%{version}.tar.xz
-# Source0-md5:	657b9b84fc5c13b72d7767c743a0764c
+Source0:	http://pub.mate-desktop.org/releases/1.8/%{name}-%{version}.tar.xz
+# Source0-md5:	1caaf6061d81d01fb85c6023ea43c25a
 URL:		http://mate-desktop.org/
 BuildRequires:	autoconf >= 2.53
 BuildRequires:	automake >= 1:1.7
@@ -26,6 +26,7 @@ Requires(post,postun):	hicolor-icon-theme >= 0.10-3
 Requires:	python-pygobject >= 2.16.0
 Requires:	python-pygtk-glade >= 2:2.14.0
 Requires:	python-matemenu >= 1.1.0
+Obsoletes:	mate-menu-editor
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -62,6 +63,7 @@ rm -rf $RPM_BUILD_ROOT
 %py_postclean
 
 # not supported by glibc
+%{__rm} -r $RPM_BUILD_ROOT%{_localedir}/cmn
 %{__rm} -r $RPM_BUILD_ROOT%{_datadir}/locale/io
 
 %find_lang mozo
@@ -81,7 +83,7 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_bindir}/mozo
 %dir %{py_sitescriptdir}/Mozo
 %{py_sitescriptdir}/Mozo/*.py[co]
-%{_datadir}/mate-menu-editor
+%{_datadir}/mozo
 %{_desktopdir}/mozo.desktop
 %{_iconsdir}/hicolor/*x*/apps/mozo.png
 %{_mandir}/man1/mozo.1*
