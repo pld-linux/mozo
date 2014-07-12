@@ -14,7 +14,7 @@ BuildRequires:	gettext-devel
 BuildRequires:	intltool >= 0.40.0
 BuildRequires:	mate-menus-devel >= 1.1.0
 BuildRequires:	pkgconfig >= 1:0.21
-BuildRequires:	python >= 2.4
+BuildRequires:	python >= 1:2.4
 BuildRequires:	python-pygobject >= 2.16.0
 BuildRequires:	python-pygtk-devel >= 2:2.14.0
 BuildRequires:	rpm-pythonprov
@@ -63,7 +63,6 @@ rm -rf $RPM_BUILD_ROOT
 %py_postclean
 
 # not supported by glibc
-%{__rm} -r $RPM_BUILD_ROOT%{_localedir}/cmn
 %{__rm} -r $RPM_BUILD_ROOT%{_datadir}/locale/io
 
 %find_lang mozo
