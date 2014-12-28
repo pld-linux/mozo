@@ -10,7 +10,7 @@ Source0:	http://pub.mate-desktop.org/releases/1.8/%{name}-%{version}.tar.xz
 URL:		http://mate-desktop.org/
 BuildRequires:	autoconf >= 2.53
 BuildRequires:	automake >= 1:1.7
-BuildRequires:	gettext-devel
+BuildRequires:	gettext-tools
 BuildRequires:	intltool >= 0.40.0
 BuildRequires:	mate-menus-devel >= 1.1.0
 BuildRequires:	pkgconfig >= 1:0.21
