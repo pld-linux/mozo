@@ -51,7 +51,9 @@ Mozo to odgałęzienie projektu Alacarte.
 %{__autoheader}
 %{__automake}
 %configure \
-	PYTHON=/usr/bin/python
+	PYTHON=/usr/bin/python \
+	--disable-icon-update \
+	--disable-silent-rules
 %{__make}
 
 %install
