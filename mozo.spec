@@ -1,12 +1,12 @@
 Summary:	Mozo - menu editor for MATE desktop
 Summary(pl.UTF-8):	Mozo - edytor menu dla środowiska MATE
 Name:		mozo
-Version:	1.12.0
+Version:	1.14.0
 Release:	1
 License:	GPL v2
 Group:		X11/Applications
-Source0:	http://pub.mate-desktop.org/releases/1.12/%{name}-%{version}.tar.xz
-# Source0-md5:	af4a77d3fc233a9583ab9b19a6be3f6d
+Source0:	http://pub.mate-desktop.org/releases/1.14/%{name}-%{version}.tar.xz
+# Source0-md5:	4d0dd62dd11c36d94ada9564e0f41c09
 URL:		http://mate-desktop.org/
 BuildRequires:	autoconf >= 2.53
 BuildRequires:	automake >= 1:1.7
@@ -14,17 +14,15 @@ BuildRequires:	gettext-tools
 BuildRequires:	intltool >= 0.40.0
 BuildRequires:	mate-menus-devel >= 1.1.0
 BuildRequires:	pkgconfig >= 1:0.21
-BuildRequires:	python >= 1:2.4
-BuildRequires:	python-pygobject >= 2.16.0
-BuildRequires:	python-pygtk-devel >= 2:2.14.0
+BuildRequires:	python >= 1:2.7
+BuildRequires:	python-pygobject3
 BuildRequires:	rpm-pythonprov
 BuildRequires:	rpmbuild(macros) >= 1.311
 BuildRequires:	tar >= 1:1.22
 BuildRequires:	xz
 Requires(post,postun):	gtk-update-icon-cache
 Requires(post,postun):	hicolor-icon-theme >= 0.10-3
-Requires:	python-pygobject >= 2.16.0
-Requires:	python-pygtk-glade >= 2:2.14.0
+Requires:	python-pygobject3
 Requires:	python-matemenu >= 1.1.0
 Obsoletes:	mate-menu-editor
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -52,6 +50,7 @@ Mozo to odgałęzienie projektu Alacarte.
 %{__automake}
 %configure \
 	PYTHON=/usr/bin/python \
+	am_cv_python_pythondir=%{py_sitescriptdir} \
 	--disable-icon-update \
 	--disable-silent-rules
 %{__make}
@@ -65,7 +64,7 @@ rm -rf $RPM_BUILD_ROOT
 %py_postclean
 
 # not supported by glibc
-%{__rm} -r $RPM_BUILD_ROOT%{_datadir}/locale/{io,ku_IQ}
+%{__rm} -r $RPM_BUILD_ROOT%{_datadir}/locale/{frp,io,ku_IQ}
 
 %find_lang mozo
 
