@@ -15,14 +15,17 @@ BuildRequires:	intltool >= 0.40.0
 BuildRequires:	mate-menus-devel >= 1.1.0
 BuildRequires:	pkgconfig >= 1:0.21
 BuildRequires:	python >= 1:2.7
-BuildRequires:	python-pygobject3
+BuildRequires:	python-pygobject3 >= 3.0
 BuildRequires:	rpm-pythonprov
 BuildRequires:	rpmbuild(macros) >= 1.311
 BuildRequires:	tar >= 1:1.22
 BuildRequires:	xz
 Requires(post,postun):	gtk-update-icon-cache
 Requires(post,postun):	hicolor-icon-theme >= 0.10-3
-Requires:	python-pygobject3
+Requires:	gdk-pixbuf2
+Requires:	gobject-introspection
+Requires:	gtk+3 >= 3.0
+Requires:	python-pygobject3 >= 3.0
 Requires:	python-matemenu >= 1.1.0
 Obsoletes:	mate-menu-editor
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
