@@ -1,21 +1,22 @@
 Summary:	Mozo - menu editor for MATE desktop
 Summary(pl.UTF-8):	Mozo - edytor menu dla środowiska MATE
 Name:		mozo
-Version:	1.20.2
+Version:	1.22.0
 Release:	1
 License:	GPL v2
 Group:		X11/Applications
-Source0:	http://pub.mate-desktop.org/releases/1.20/%{name}-%{version}.tar.xz
-# Source0-md5:	e4a4f16f3688f83c428ccccdc36b1e09
+Source0:	http://pub.mate-desktop.org/releases/1.22/%{name}-%{version}.tar.xz
+# Source0-md5:	f9465dec54b42698b04ddbe4396d670c
 URL:		http://mate-desktop.org/
 BuildRequires:	autoconf >= 2.53
 BuildRequires:	automake >= 1:1.7
 BuildRequires:	gettext-tools
 BuildRequires:	intltool >= 0.40.0
-BuildRequires:	mate-menus-devel >= 1.1.0
+BuildRequires:	mate-menus-devel >= 1.21.0
 BuildRequires:	pkgconfig >= 1:0.21
-BuildRequires:	python >= 1:2.7
-BuildRequires:	python-pygobject3 >= 3.0
+BuildRequires:	python3 >= 1:3.5
+BuildRequires:	python3-pygobject3 >= 3.0
+BuildRequires:	python-pygobject3-common-devel >= 3.0
 BuildRequires:	rpm-pythonprov
 BuildRequires:	rpmbuild(macros) >= 1.311
 BuildRequires:	tar >= 1:1.22
@@ -25,8 +26,9 @@ Requires(post,postun):	hicolor-icon-theme >= 0.10-3
 Requires:	gdk-pixbuf2
 Requires:	gobject-introspection
 Requires:	gtk+3 >= 3.0
-Requires:	python-pygobject3 >= 3.0
-Requires:	python-matemenu >= 1.1.0
+Requires:	mate-menus-libs >= 1.21.0
+Requires:	python3 >= 1:3.5
+Requires:	python3-pygobject3 >= 3.0
 Obsoletes:	mate-menu-editor
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -52,8 +54,8 @@ Mozo to odgałęzienie projektu Alacarte.
 %{__autoheader}
 %{__automake}
 %configure \
-	PYTHON=/usr/bin/python \
-	am_cv_python_pythondir=%{py_sitescriptdir} \
+	PYTHON=/usr/bin/python3 \
+	am_cv_python_pythondir=%{py3_sitescriptdir} \
 	--disable-icon-update \
 	--disable-silent-rules
 %{__make}
@@ -63,8 +65,6 @@ rm -rf $RPM_BUILD_ROOT
 
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
-
-%py_postclean
 
 # not supported by glibc
 %{__rm} -r $RPM_BUILD_ROOT%{_datadir}/locale/{es_ES,frp,kab,ku_IQ,pms}
@@ -84,8 +84,10 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc AUTHORS ChangeLog NEWS README
 %attr(755,root,root) %{_bindir}/mozo
-%dir %{py_sitescriptdir}/Mozo
-%{py_sitescriptdir}/Mozo/*.py[co]
+%dir %{py3_sitescriptdir}/Mozo
+%{py3_sitescriptdir}/Mozo/*.py
+%dir %{py3_sitescriptdir}/Mozo/__pycache__
+%{py3_sitescriptdir}/Mozo/__pycache__/*.py[co]
 %{_datadir}/mozo
 %{_desktopdir}/mozo.desktop
 %{_iconsdir}/hicolor/*x*/apps/mozo.png
