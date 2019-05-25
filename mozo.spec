@@ -67,7 +67,7 @@ rm -rf $RPM_BUILD_ROOT
 	DESTDIR=$RPM_BUILD_ROOT
 
 # not supported by glibc
-%{__rm} -r $RPM_BUILD_ROOT%{_datadir}/locale/{es_ES,frp,kab,ku_IQ,pms}
+%{__rm} -r $RPM_BUILD_ROOT%{_datadir}/locale/{es_ES,frp,ku_IQ,pms}
 
 %find_lang mozo
 
