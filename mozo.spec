@@ -1,17 +1,16 @@
 Summary:	Mozo - menu editor for MATE desktop
 Summary(pl.UTF-8):	Mozo - edytor menu dla środowiska MATE
 Name:		mozo
-Version:	1.22.2
-Release:	3
+Version:	1.24.0
+Release:	1
 License:	GPL v2
 Group:		X11/Applications
-Source0:	http://pub.mate-desktop.org/releases/1.22/%{name}-%{version}.tar.xz
-# Source0-md5:	380dae3943a9e81e013e3fc93b677bf6
+Source0:	http://pub.mate-desktop.org/releases/1.24/%{name}-%{version}.tar.xz
+# Source0-md5:	78b9b8d4cb85856d814649b3e5ad1fbc
 URL:		http://mate-desktop.org/
 BuildRequires:	autoconf >= 2.53
 BuildRequires:	automake >= 1:1.7
-BuildRequires:	gettext-tools
-BuildRequires:	intltool >= 0.40.0
+BuildRequires:	gettext-tools >= 0.19.8
 BuildRequires:	mate-menus-devel >= 1.21.0
 BuildRequires:	pkgconfig >= 1:0.21
 BuildRequires:	python3 >= 1:3.5
@@ -48,7 +47,6 @@ Mozo to odgałęzienie projektu Alacarte.
 %setup -q
 
 %build
-%{__intltoolize}
 %{__aclocal}
 %{__autoconf}
 %{__autoheader}
