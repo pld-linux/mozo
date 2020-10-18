@@ -7,6 +7,7 @@ License:	GPL v2
 Group:		X11/Applications
 Source0:	http://pub.mate-desktop.org/releases/1.24/%{name}-%{version}.tar.xz
 # Source0-md5:	78b9b8d4cb85856d814649b3e5ad1fbc
+Patch0:		%{name}-noarch.patch
 URL:		http://mate-desktop.org/
 BuildRequires:	autoconf >= 2.53
 BuildRequires:	automake >= 1:1.7
@@ -17,7 +18,7 @@ BuildRequires:	python3 >= 1:3.5
 BuildRequires:	python3-pygobject3 >= 3.0
 BuildRequires:	python-pygobject3-common-devel >= 3.0
 BuildRequires:	rpm-pythonprov
-BuildRequires:	rpmbuild(macros) >= 1.752
+BuildRequires:	rpmbuild(macros) >= 1.311
 BuildRequires:	tar >= 1:1.22
 BuildRequires:	xz
 Requires(post,postun):	gtk-update-icon-cache
@@ -29,7 +30,7 @@ Requires:	mate-menus-libs >= 1.21.0
 Requires:	python3 >= 1:3.5
 Requires:	python3-pygobject3 >= 3.0
 Obsoletes:	mate-menu-editor
-%{?noarchpackage}
+BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -46,6 +47,7 @@ Mozo to odgałęzienie projektu Alacarte.
 
 %prep
 %setup -q
+%patch0 -p1
 
 %build
 %{__aclocal}

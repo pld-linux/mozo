@@ -1,0 +1,12 @@
+diff --color -urN mozo-1.24.0.orig/configure.ac mozo-1.24.0/configure.ac
+--- mozo-1.24.0.orig/configure.ac	2020-02-10 14:16:49.000000000 +0100
++++ mozo-1.24.0/configure.ac	2020-10-18 15:05:05.142863402 +0200
+@@ -17,7 +17,7 @@
+ AC_DEFINE_UNQUOTED(GETTEXT_PACKAGE, "$GETTEXT_PACKAGE", [Gettext package])
+ AM_GNU_GETTEXT_VERSION([0.19.8])
+ AM_GNU_GETTEXT_REQUIRE_VERSION([0.19.8])
+-AM_GNU_GETTEXT([external])
++AM_PO_SUBDIRS
+ 
+ AM_PATH_PYTHON(3.5)
+ 
