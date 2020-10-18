@@ -17,7 +17,7 @@ BuildRequires:	python3 >= 1:3.5
 BuildRequires:	python3-pygobject3 >= 3.0
 BuildRequires:	python-pygobject3-common-devel >= 3.0
 BuildRequires:	rpm-pythonprov
-BuildRequires:	rpmbuild(macros) >= 1.311
+BuildRequires:	rpmbuild(macros) >= 1.752
 BuildRequires:	tar >= 1:1.22
 BuildRequires:	xz
 Requires(post,postun):	gtk-update-icon-cache
@@ -29,6 +29,7 @@ Requires:	mate-menus-libs >= 1.21.0
 Requires:	python3 >= 1:3.5
 Requires:	python3-pygobject3 >= 3.0
 Obsoletes:	mate-menu-editor
+%{?noarchpackage}
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
