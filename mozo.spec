@@ -8,7 +8,7 @@ Group:		X11/Applications
 Source0:	https://pub.mate-desktop.org/releases/1.26/%{name}-%{version}.tar.xz
 # Source0-md5:	99d0c1289c3fe4fab5720de73364713a
 Patch0:		%{name}-noarch.patch
-URL:		http://mate-desktop.org/
+URL:		https://wiki.mate-desktop.org/mate-desktop/applications/mozo/
 BuildRequires:	autoconf >= 2.53
 BuildRequires:	automake >= 1:1.7
 BuildRequires:	gettext-tools >= 0.19.8
@@ -18,7 +18,7 @@ BuildRequires:	python3 >= 1:3.5
 BuildRequires:	python3-pygobject3 >= 3.0
 BuildRequires:	python-pygobject3-common-devel >= 3.0
 BuildRequires:	rpm-pythonprov
-BuildRequires:	rpmbuild(macros) >= 1.311
+BuildRequires:	rpmbuild(macros) >= 1.596
 BuildRequires:	tar >= 1:1.22
 BuildRequires:	xz
 Requires(post,postun):	gtk-update-icon-cache
@@ -29,7 +29,7 @@ Requires:	gtk+3 >= 3.0
 Requires:	mate-menus-libs >= 1.21.0
 Requires:	python3 >= 1:3.5
 Requires:	python3-pygobject3 >= 3.0
-Obsoletes:	mate-menu-editor
+Obsoletes:	mate-menu-editor < 1.8.0
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
