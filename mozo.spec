@@ -1,12 +1,12 @@
 Summary:	Mozo - menu editor for MATE desktop
 Summary(pl.UTF-8):	Mozo - edytor menu dla środowiska MATE
 Name:		mozo
-Version:	1.26.1
-Release:	3
+Version:	1.26.2
+Release:	1
 License:	GPL v2
 Group:		X11/Applications
 Source0:	https://pub.mate-desktop.org/releases/1.26/%{name}-%{version}.tar.xz
-# Source0-md5:	d409f9f8b98309d62aae81f60dbba78f
+# Source0-md5:	3a9785c81bcfa4e356b3d28785ee3d6e
 Patch0:		%{name}-noarch.patch
 URL:		https://wiki.mate-desktop.org/mate-desktop/applications/mozo/
 BuildRequires:	autoconf >= 2.53
@@ -25,7 +25,7 @@ Requires(post,postun):	gtk-update-icon-cache
 Requires(post,postun):	hicolor-icon-theme >= 0.10-3
 Requires:	gdk-pixbuf2
 Requires:	gobject-introspection
-Requires:	gtk+3 >= 3.0
+Requires:	gtk+3 >= 3.12
 Requires:	mate-menus-libs >= 1.21.0
 Requires:	python3 >= 1:3.5
 Requires:	python3-pygobject3 >= 3.0
