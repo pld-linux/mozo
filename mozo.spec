@@ -2,7 +2,7 @@ Summary:	Mozo - menu editor for MATE desktop
 Summary(pl.UTF-8):	Mozo - edytor menu dla środowiska MATE
 Name:		mozo
 Version:	1.28.0
-Release:	
+Release:	2
 License:	GPL v2
 Group:		X11/Applications
 Source0:	https://pub.mate-desktop.org/releases/1.28/%{name}-%{version}.tar.xz
@@ -47,7 +47,7 @@ Mozo to odgałęzienie projektu Alacarte.
 
 %prep
 %setup -q
-%patch0 -p1
+%patch -P 0 -p1
 
 %build
 %{__aclocal}
